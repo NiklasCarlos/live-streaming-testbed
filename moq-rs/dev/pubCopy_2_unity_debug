@@ -1,0 +1,43 @@
+#!/bin/bash
+set -euo pipefail
+
+# Change directory to the root of the project
+cd "$(dirname "$0")/.."
+
+# Use debug logging by default
+export RUST_LOG="${RUST_LOG:-debug}"
+
+# Connect to localhost by default.
+HOST="${HOST:-localhost}"
+PORT="${PORT:-4443}"
+ADDR="${ADDR:-$HOST:$PORT}"
+
+# Generate a random 16 character name by default.
+#NAME="${NAME:-$(head /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | head -c 16)}"
+
+# JK use the name "dev" instead
+# TODO use that random name if the host is not localhost
+NAME="${NAME:-dev}"
+
+# Combine the host and name into a URL.
+URL="${URL:-"https://$ADDR/$NAME"}"
+
+# Default to a source video
+INPUT="${INPUT:-dev/output.mp4}"
+
+# Print out the watch URL
+echo "Watch URL: https://quic.video/watch/$NAME?server=$ADDR"
+
+#change output.mp4 name or delete old
+/c/ffmpeg/bin/ffmpeg.exe -hide_banner \
+	-f rawvideo \
+	-vcodec rawvideo \
+	-pixel_format rgba \
+	-colorspace bt709 \
+	-video_size 1920x1080 \
+	-framerate 30  \
+	-i - \
+	-pix_fmt yuv420p \
+	C://Users//NIK//Desktop//test_frame//out1bash.mp4 
+
+	

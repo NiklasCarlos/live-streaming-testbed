@@ -1,0 +1,15 @@
+{
+	"name": "moq-js",
+	"type": "module",
+	"private": true,
+	"workspaces": [
+		"lib",
+		"web"
+	],
+	"scripts": {
+		"dev": "npm run dev --workspace web",
+		"build": "npm run build --workspaces",
+		"lint": "npm run lint --workspaces",
+		"fmt": "npm run fmt --workspaces"
+	}
+}

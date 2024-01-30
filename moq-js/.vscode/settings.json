@@ -1,0 +1,19 @@
+{
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"astro", // Enable .astro
+		"typescript", // Enable .ts
+		"typescriptreact" // Enable .tsx
+	],
+	"eslint.run": "onSave",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit"
+	},
+	"editor.formatOnSave": true, // Tell VSCode to format files on save
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"search.exclude": {
+		// Avoid polluting search results with lockfile content
+		"package-lock.json": true
+	}
+}

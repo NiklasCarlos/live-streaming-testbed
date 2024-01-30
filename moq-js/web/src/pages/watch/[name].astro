@@ -1,0 +1,22 @@
+---
+export const prerender = false
+
+const { name } = Astro.params
+if (!name) return Astro.redirect("/404")
+
+import Issues from "@/components/issues.astro"
+import Watch from "@/components/watch.tsx"
+import Clock from "@/components/clock.tsx"
+import Layout from "@/layouts/global.astro"
+---
+
+<Layout title={`Watch - ${name}`}>
+	<Issues />
+
+	<p>
+		Watching a <strong>PUBLIC</strong> broadcast. Pls report any abuse.
+	</p>
+	<!--instead of dev was bbb-->
+	{name == "dev" && <Clock client:only />}
+	<Watch name={name} client:only />
+</Layout>
