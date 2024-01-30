@@ -5,7 +5,7 @@ This repository contains a few crates:
 -   **testbed**: The testbed contains all the necessary setup to run a remote rendering service and stream it via MoQ and a livestreaming simulation. The end-to-end latency is measured in both cases. To compare the result the same use cases are also streamed via WebRTC for comparison reasons.
 - 	**results**: The results folder contains the measurment results, recorded videos of the conducted experiments and plottings (created via python)
 
-### Resason of this repo: 
+### why a live streaming testbed?: 
 
 Live video streaming on the Internet has become increasingly popular in recent years
 and now accounts for more than 50% of total Internet traffic. This trend highlights
