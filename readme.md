@@ -2,7 +2,7 @@ This repository contains a few crates:
 
 -   **moq-rs**: HTTP/3 with WebTransport implementation from https://github.com/kixelated/moq-rs (not the latest version) .
 -   **moq-js**: A web library for MoQ. It uses the browser APIs such as WebTransport and WebCodecs to display content of the moq-rs https://github.com/kixelated/moq-js.
--   **testbed**: The testbed contains all the necessary setup to run a remote rendering service and stream it via MoQ and a livestreaming simulation. The end-to-end latency is measured in both cases. To compare the result the same use cases are also streamed via WebRTC for comparison reasons.
+-   **testbed**: The testbed contains all the necessary setup to run a remote rendering service and stream it via MoQ and a livestreaming simulation. The end-to-end latency is measured in both cases. To compare the result the same use cases are also streamed via WebRTC for comparison reasons. There are two use cases: Remote rendering and live stream simulation
 - 	**results**: The results folder contains the measurment results, recorded videos of the conducted experiments and plottings (created via python)
 
 ### why a live streaming testbed?: 
